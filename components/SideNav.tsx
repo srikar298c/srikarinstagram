@@ -1,4 +1,6 @@
 import Logo from "./Logo"
+import MoreDropdown from "./MoreDropdown"
+import NavLinks from "./NavLinks"
 
 function SideNav() {
   return (
@@ -9,6 +11,10 @@ function SideNav() {
         md:flex-col md:space-x-0 md:space-y-2 p-2 ">
         <Logo/>
         <NavLinks/>
+        <div className="hidden md:flex relative md:mt-auto flex-1 
+        items-end w-full">
+          <MoreDropdown />
+        </div>
       </div>
       
       </div>
