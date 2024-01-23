@@ -18,7 +18,7 @@ function Logo() {
       <p
         className={`font-semibold text-xl hidden lg:block `}
       >
-        srikargram
+        srikarinstagram
       </p>
     </Link>
   );
