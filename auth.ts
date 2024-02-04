@@ -18,6 +18,18 @@ export const config = {
       strategy: "jwt",
     },
 callbacks:{
+  async session({ session, token }) {
+    if (token) {
+      session.user.id = token.id;
+      session.user.name = token.name;
+      session.user.email = token.email;
+      session.user.image = token.picture;
+      session.user.username = token.username;
+    }
+
+    return session;
+  },
+
     async jwt({ token, user }) {
         const prismaUser = await prisma.user.findFirst({
           where: {
