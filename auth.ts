@@ -3,6 +3,7 @@ import GoogleProvider from "next-auth/providers/google";
 //import NextAuth, { getServerSession, type NextAuthOptions } from "next-auth";
 import { NextAuthOptions } from "next-auth";
 import prisma from "./lib/prisma";
+import NextAuth from "next-auth/next";
 export const config = {
     pages: {
       signIn: "/login",
@@ -62,3 +63,5 @@ callbacks:{
       },
     },
   } satisfies NextAuthOptions;
+
+  export default NextAuth(config);
