@@ -11,7 +11,8 @@ function SideNav() {
         md:flex-col md:space-x-0 md:space-y-2 p-2 ">
         <Logo/>
         <NavLinks/>
-        {user && <ProfileLInk/>}
+        {user && <ProfileLInk
+        user ={user}/>}
         <div className="hidden md:flex relative md:mt-auto flex-1 
         items-end w-full">
           <MoreDropdown />
