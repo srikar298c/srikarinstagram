@@ -21,7 +21,7 @@ function ProfileLink({ user }: { user: User }) {
         className: "navLink",
         size: "lg",
       })}
-    >
+    > 
       <UserAvatar
         user={user}
         className={`h-6 w-6 ${isActive && "border-2 border-white"}`}
