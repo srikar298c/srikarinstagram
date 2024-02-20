@@ -20,9 +20,9 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import useMount from "@/hooks/useMount";
-// import { createPost } from "@/lib/actions";
-// import { CreatePost } from "@/lib/schemas";
-// import { UploadButton } from "@/lib/uploadthing";
+import { createPost } from "@/lib/actions";
+ import { CreatePost } from "@/lib/schemas";
+ import { UploadButton } from "@/lib/uploadthing";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
