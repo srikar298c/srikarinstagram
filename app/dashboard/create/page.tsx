@@ -1,6 +1,6 @@
 "use client";
 
-import Error from "@/components/Error";
+//import Error from "@/components/Error";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
 import {
@@ -20,7 +20,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import useMount from "@/hooks/useMount";
-import { createPost } from "@/lib/actions";
+//import { createPost } from "@/lib/actions";
  import { CreatePost } from "@/lib/schemas";
  import { UploadButton } from "@/lib/uploadthing";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -61,10 +61,10 @@ function CreatePage() {
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(async (values) => {
-                const res = await createPost(values);
-                if (res) {
-                  return toast.error(<Error res={res} />);
-                }
+                // const res = await createPost(values);
+                // if (res) {
+                //   return toast.error(<Error res={res} />);
+                // }
               })}
               className="space-y-4"
             >
