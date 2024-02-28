@@ -1,6 +1,6 @@
 "use client";
 
-//import Error from "@/components/Error";
+import Error from "@/components/Error";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
 import {
@@ -61,10 +61,10 @@ function CreatePage() {
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(async (values) => {
-                // const res = await createPost(values);
-                // if (res) {
-                //   return toast.error(<Error res={res} />);
-                // }
+                const res = await createPost(values);
+                if (res) {
+                  return toast.error(<Error res={res} />);
+                }
               })}
               className="space-y-4"
             >
