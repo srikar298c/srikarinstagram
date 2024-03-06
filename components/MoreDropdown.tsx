@@ -54,7 +54,7 @@ function MoreDropdown() {
           onClick={() => setOpen(!open)}
           variant={"ghost"}
           size={"lg"}
-          className="md:w-full !justify-start space-x-2 !px-3"
+          className="md:w-full !justify-start space-x-5 !px-3"
         >
           <Menu />
           <div className="hidden lg:block">More</div>
@@ -64,7 +64,7 @@ function MoreDropdown() {
       <DropdownMenuContent
         ref={ref}
         className={cn(
-          "dark:bg-neutral-800 w-64 !rounded-xl !p-0 transition-opacity",
+          "dark:bg-neutral-800 w-64 !rounded-xl !px-0  transition-opacity ",
          // !open && "opacity-0"
         )}
         align="end"
@@ -72,7 +72,7 @@ function MoreDropdown() {
       >
         {!showModeToggle && (
           <>
-            <DropdownMenuItem className="menuItem">
+            <DropdownMenuItem className=" menuItem flex space-x-2 ">
               <Settings size={20} />
               <p>Settings</p>
             </DropdownMenuItem>
@@ -112,12 +112,12 @@ function MoreDropdown() {
               )}
             </div>
 
-            <Label htmlFor="dark-mode" className="menuItem">
+            <Label htmlFor="dark-mode" className="flex justify-between">
               Dark Mode
               <DropdownMenuItem className="ml-auto !p-0">
                 <Switch
                   id="dark-mode"
-                  className="ml-auto"
+                  className=""
                   checked={theme === "dark"}
                   onCheckedChange={(checked) => {
                     setTheme(checked ? "dark" : "light");

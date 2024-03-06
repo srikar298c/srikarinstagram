@@ -1,10 +1,10 @@
- import React from 'react'
+import {fetchPosts} from "@lib/data"
  
- export default function posts() {
+ async function Posts() {
    return (
      <div>
-       
+       const post = await fetchPOsts();
      </div>
    )
  }
- 
+ export default Posts;
