@@ -1,10 +1,9 @@
-import {fetchPosts} from "@lib/data"
+import {fetchPosts} from "@/lib/data"
  
  async function Posts() {
-   return (
-     <div>
-       const post = await fetchPOsts();
-     </div>
-   )
+  
+       const post = await fetchPosts();
+ 
+   return <>{/*post*/}</>
  }
  export default Posts;
