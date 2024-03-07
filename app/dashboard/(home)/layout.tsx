@@ -1,12 +1,12 @@
-import Header from '@/components/Headear'
-import React from 'react'
+import Header from "@/components/Header";
 
-function HomePageLayout({children}:{children: React.ReactNode}) {
+function HomePageLayout({ children }: { children: React.ReactNode }) {
   return (
     <div>
-     <Header/> 
+      <Header />
+      {children}
     </div>
-  )
+  );
 }
 
-export default HomePageLayout
+export default HomePageLayout;
