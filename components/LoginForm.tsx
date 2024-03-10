@@ -3,6 +3,7 @@ import { signIn } from "next-auth/react";
 import { useFormStatus } from "react-dom";
 import { Button } from "./ui/button";
 import { calSans } from "@/app/fonts";
+import GoogleSvg from "./GoogleSvg";
 
 export default function LoginForm() {
   return (
@@ -18,16 +19,21 @@ export default function LoginForm() {
   );
 }
 
-function LoginButton() {
+interface LoginButtonProps {
+  className?: string;
+}
+
+function LoginButton({ className }: LoginButtonProps) {
   const { pending } = useFormStatus();
 
   return (
     <Button
-      className="mt-4 w-full"
+      className={`mt-4 w-full flex items-center justify-center gap-2 ${className}`}
       variant={"secondary"}
       aria-disabled={pending}
       onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
     >
+      <GoogleSvg className="w-6 h-6" />
       Log in with Google
     </Button>
   );
