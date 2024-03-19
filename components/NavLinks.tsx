@@ -24,7 +24,9 @@ const links = [
       icon: Search,
       hideOnMobile: true,
     },
-    { name: "Explore", href: "/dashboard/explore", icon: Compass },
+    { name: "Explore",
+     href: "/dashboard/explore", 
+     icon: Compass },
     {
       name: "Reels",
       href: "/dashboard/reels",
@@ -46,6 +48,10 @@ const links = [
       href: "/dashboard/create",
       icon: PlusSquare,
     },
+    // {
+    //   name: "Logout",
+    //   href
+    // }
   ];
   
   

@@ -1,4 +1,3 @@
-import Alpha from "@/components/Alpha";
 import Posts from "@/components/Posts";
 
 
