@@ -22,3 +22,12 @@ This is a social media app that allows users to create accounts, add friends, po
 4. **Interacting with Posts:** Users can Engage with posts in realtime by liking and also commenting on the post they can also share the post.
 5. **Follow and Unfollow users:** Users can follow and unfollow other users by 
 6. **Data Fetching and Caching:** Data is efficiently fetched and cached using to provide a seamless user experience.
+7. **Bandwidth-Saving Comment Loading:** A limited number of comments are initially loaded per post, with dynamic loading of more comments as the user scrolls to optimize bandwidth usage.
+
+## Planned Features
+1. **Live Group Chat:** Upon joining a group, users can engage in real-time group chat with other members.
+2.  **Admin Controls for Group Chat:** Administrators of group chats will have the ability to select and admit members they wish to join.
+3.  **Live video Sharing:** Users can stream there live video.
+4.  **Direct Message:** Users can have conversation directly with others throuth text message and can also share Media
+5.  
+   
