@@ -57,4 +57,4 @@ function LikeButton({
   );
 }
 
-export default LikeButton;s
+export default LikeButton;
