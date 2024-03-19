@@ -28,6 +28,6 @@ This is a social media app that allows users to create accounts, add friends, po
 1. **Live Group Chat:** Upon joining a group, users can engage in real-time group chat with other members.
 2.  **Admin Controls for Group Chat:** Administrators of group chats will have the ability to select and admit members they wish to join.
 3.  **Live video Sharing:** Users can stream there live video.
-4.  **Direct Message:** Users can have conversation directly with others throuth text message and can also share Media
+4.  **Direct Message:** Users can have conversation directly with others throuth text message and can also share Media.
 5.  
    
