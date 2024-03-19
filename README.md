@@ -14,4 +14,4 @@ This is a social media app that allows users to create accounts, add friends, po
 - nextAuth: Provides authentication support for Next.js applications.
 - RecoilJS: A state management library for managing and sharing the application's global state.
 - Zod: A TypeScript-first schema validation library for data validation and sanitization.
-
+## Features of this project
