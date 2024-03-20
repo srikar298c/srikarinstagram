@@ -61,7 +61,7 @@ async function Post({ post }: PostProps) {
           <p>{post.caption}</p>
         </div>
       )}
-      {/* <Comments postId={post.id} comments={post.comments} user={session.user} /> */}
+      <Comments postId={post.id} comments={post.comments} user={session.user} />
     </div>
   );
 }
