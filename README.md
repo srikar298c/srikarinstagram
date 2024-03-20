@@ -30,4 +30,20 @@ This is a social media app that allows users to create accounts, add friends, po
 3.  **Live video Sharing:** Users can stream there live video.
 4.  **Direct Message:** Users can have conversation directly with others throuth text message and can also share Media.
 5.  
-   
+
+# Getting Started
+
+To run this Social Media App locally, follow these steps:
+
+1. Clone the repository.
+2. Install the required dependencies using `npm install`.
+3. Rename the `env.example` file to `.env`.
+4. Add the following keys and replace the values with your own:
+   - Replace `DATABASE_URL` with the URL of your Postgres URL. I used Neon.tech for happening it.
+   - Replace `YOUR_NEXTAUTH_URL` with the URL of your Next.js application where NextAuth should handle authentication.
+   - Replace `YOUR_NEXTAUTH_SECRET` with a random secret key for NextAuth. You can generate one using a tool like `openssl rand -hex 32`.
+   - Replace `YOUR_SUPABASE_PROJECT_URL` with the URL of your Supabase project.
+   - Replace `YOUR_SUPABASE_PROJECT_ANON_KEY` with the anonymous key for your Supabase project.
+
+5. Run database migrations using `npx prisma migrate dev`.
+6. Run the development server using `npm run dev`.
