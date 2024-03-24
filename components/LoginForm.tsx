@@ -4,6 +4,7 @@ import { useFormStatus } from "react-dom";
 import { Button } from "./ui/button";
 import { calSans } from "@/app/fonts";
 import GoogleSvg from "./GoogleSvg";
+import { toast } from "sonner";
 
 export default function LoginForm() {
   return (
@@ -31,7 +32,8 @@ function LoginButton({ className }: LoginButtonProps) {
       className={`mt-4 w-full flex items-center justify-center gap-2 ${className}`}
       variant={"secondary"}
       aria-disabled={pending}
-      onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
+      onClick={() => signIn("google", { callbackUrl: "/dashboard" }).then(()=>
+      toast.success("Sucessfully logged in"))}
     >
       <GoogleSvg className="w-6 h-6" />
       Log in with Google
