@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function PostPage() {
   return (
-    <div>Actual postpage</div>
+    <div></div>
   )
 }
