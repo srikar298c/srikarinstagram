@@ -16,7 +16,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Card } from "./ui/card";
-import MiniPost from "./MIniPost";
+import MiniPost from "./MiniPost";
 
 
 async function SinglePost({ id }: { id: string }) {
