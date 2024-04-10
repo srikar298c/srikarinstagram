@@ -1,8 +1,8 @@
-import { SinglePostSkeleton } from "@/components/Skeletons";
 import { Suspense } from "react";
 import { Separator } from "@/components/ui/separator";
 import SinglePost from "@/components/SinglePost";
 import MorePosts from "@/components/MorePosts";
+import { SinglePostSkeleton } from "@/components/Skeltons";
 
 function PostPage({ params: { id } }: { params: { id: string } }) {
   return (
