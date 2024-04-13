@@ -1,19 +1,17 @@
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import prisma from "@/lib/prisma";
 import GoogleProvider from "next-auth/providers/google";
+import { Adapter, AdapterUser } from "next-auth/adapters";
 import NextAuth, { getServerSession, type NextAuthOptions } from "next-auth";
-import {
-  GetServerSidePropsContext,
-  NextApiRequest,
-  NextApiResponse,
-} from "next";
+import { GetServerSidePropsContext, NextApiRequest, NextApiResponse } from "next";
 
+const adapter: Adapter = PrismaAdapter(prisma) as Adapter;
 
-export const config = {
+export const config: NextAuthOptions = {
   pages: {
     signIn: "/login",
   },
-  adapter: PrismaAdapter(prisma),
+  adapter,
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
@@ -26,31 +24,33 @@ export const config = {
   callbacks: {
     async session({ session, token }) {
       if (token) {
-        session.user.id = token.id;
-        session.user.name = token.name;
-        session.user.email = token.email;
-        session.user.image = token.picture;
-        session.user.username = token.username;
+        session.user = {
+          ...session.user,
+          id: token.id,
+          name: token.name,
+          email: token.email,
+          image: token.picture,
+          username: token.username,
+        };
       }
-
       return session;
     },
     async jwt({ token, user }) {
+      if (user) {
+        token.id = user.id;
+      }
+
       const prismaUser = await prisma.user.findFirst({
-        where: {
-          email: token.email,
-        },
+        where: { email: token.email },
       });
 
       if (!prismaUser) {
-        token.id = user.id;
         return token;
       }
+
       if (!prismaUser.username) {
         await prisma.user.update({
-          where: {
-            id: prismaUser.id,
-          },
+          where: { id: prismaUser.id },
           data: {
             username: prismaUser.name?.split(" ").join("").toLowerCase(),
           },
@@ -58,6 +58,7 @@ export const config = {
       }
 
       return {
+        ...token,
         id: prismaUser.id,
         name: prismaUser.name,
         email: prismaUser.email,
@@ -66,16 +67,17 @@ export const config = {
       };
     },
   },
-} satisfies NextAuthOptions;
+};
 
 export default NextAuth(config);
 
 // Use it in server contexts
 export function auth(
-  ...args:
-    | [GetServerSidePropsContext["req"], GetServerSidePropsContext["res"]]
-    | [NextApiRequest, NextApiResponse]
-    | []
+  ...args: [
+    GetServerSidePropsContext["req"],
+    GetServerSidePropsContext["res"]
+  ] |
+  [NextApiRequest, NextApiResponse] | []
 ) {
   return getServerSession(...args, config);
 }
