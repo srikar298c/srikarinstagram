@@ -39,15 +39,6 @@ function LoginButton({ className }: LoginButtonProps) {
       <GoogleSvg className="w-6 h-6" />
       Log in with Google
     </Button>
-     <Button
-      className={`mt-4 w-full flex items-center justify-center gap-2 ${className}`}
-      variant={"secondary"}
-      aria-disabled={pending}
-      onClick={() => signIn("github", { callbackUrl: "/dashboard" }).then(()=>
-      toast.success("Sucessfully logged in"))}
-    >
-      Log in with Github
-    </Button>
     </>
   );
 }
