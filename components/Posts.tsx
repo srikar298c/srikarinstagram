@@ -1,5 +1,5 @@
 import { fetchPosts } from "@/lib/data";
-import Post from "./Post";
+import Post from "@/components/Post";
 
 
 async function Posts() {
